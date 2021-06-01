@@ -1,0 +1,41 @@
+<section class="page-section" id="blog-section">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="section-title mb-3">Blog Posts</h2>
+            </div>
+        </div>
+
+
+        <div class="row">
+            {{ range first 3 (where site.RegularPages "Section" "blog")}}
+
+            <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+              <div class="h-entry">
+                <img src="{{ with .Params.mainImage }}{{ . | relURL }}{{ end }}"  alt="{{.Title}} image" class="img-fluid" />
+                <h4><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+                <div class="meta mb-4">{{ .Params.author }} <span class="mx-2">&bullet;</span> {{ .Date.Format .Site.Params.dateFormat }}<span class="mx-2">&bullet;</span>
+                    {{ range $taxonomyname := .Params.categories }}
+                    <a href="{{ "/" | relLangURL}}{{ $taxonomyname | urlize }}">#{{ $taxonomyname }}</a>
+                    {{ end }}
+                </div>
+                <p> {{ .Description }}</p>
+                <p><a href="{{ .RelPermalink }}">Continue Reading...</a></p>
+              </div> 
+            </div>
+
+                {{ end }}
+      
+
+ 
+          </div>
+          <hr>
+          <div class="row">
+
+                         <!-- Pager -->
+                         <div class="clearfix">
+                            <a class="btn btn-primary float-right text-white" href="/blog">All Posts &rarr;</a>
+                        </div>
+                </div>    
+    </div>
+</section>

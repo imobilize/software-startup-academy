@@ -1,0 +1,63 @@
+{{ "<!-- Sidebar Widgets Column -->" | safeHTML }}
+<div class="col-md-4">
+
+
+  {{ "<!-- Search Widget -->" | safeHTML }}
+  <div class="card side-widget">
+    <h5 class="card-header">Featured Resource</h5>
+    <div class="card-body">
+      <h6>The Mobile App Development Guide</h6>
+      <p>Learn what it takes to build and launch a mobile app. Enter your email address to get the free guide.</p>
+      <div>
+        <img class="img-fluid" src="/img/blog/mobile-app-development-guide.jpg" alt="Mobile app development guide">
+      </div>
+
+	<!-- Moosend Form -->
+	  <script>if(!window.mootrack){ !function(t,n,e,o,a){function d(t){var n=~~(Date.now()/3e5),o=document.createElement(e);o.async=!0,o.src=t+"?ts="+n;var a=document.getElementsByTagName(e)[0];a.parentNode.insertBefore(o,a)}t.MooTrackerObject=a,t[a]=t[a]||function(){return t[a].q?void t[a].q.push(arguments):void(t[a].q=[arguments])},window.attachEvent?window.attachEvent("onload",d.bind(this,o)):window.addEventListener("load",d.bind(this,o),!1)}(window,document,"script","https://cdn.stat-track.com/statics/moosend-tracking.min.js","mootrack"); } mootrack('loadForm', 'c15050bebdf74bd485ddd72e6089d916');</script>
+	  <div data-mooform-id="c15050be-bdf7-4bd4-85dd-d72e6089d916" ></div>
+
+
+    </div>
+  </div>
+
+
+  {{ "<!-- Categories Widget -->" | safeHTML }}
+  <div class="card my-4">
+    <h5 class="card-header">Categories</h5>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-lg-6">
+          <ul class="list-unstyled mb-0">
+            {{ range $taxonomyname, $taxonomy := .Site.Taxonomies.categories }}
+            <li>
+              <a href="{{ "/" | relLangURL}}{{ $taxonomyname | urlize }}">#{{ $taxonomyname }}</a>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+        <div class="col-lg-6">
+          <ul class="list-unstyled mb-0">
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  {{ "<!-- Related Content Widget -->" | safeHTML }}
+  {{ $related := .Site.RegularPages.Related . | first 5 }}
+  {{ with $related }}
+  <div class="card my-4">
+    <h5 class="card-header">Related Content</h5>
+    <div class="card-body">
+      <ul class="list-unstyled mb-0">
+        {{ range . }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+  {{ end }}
+
+</div>

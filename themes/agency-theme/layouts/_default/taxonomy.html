@@ -1,0 +1,33 @@
+{{ define "main" }}
+
+<section class="hero-area">
+    <div class="container text-center">
+        <h1 class="text-white">{{ .Title }}</h1>
+    </div>
+</section>
+
+{{ "  <!-- Authors Section -->" | safeHTML }}
+<section class="pricing py-2">
+    <div class="container">
+
+        <div class="row">
+            {{ range (.Paginator 8).Pages }}
+
+            {{ "<!-- Team Member -->" | safeHTML }}
+            <div class="col-xl-3 col-sm-6 mb-4">
+            
+                <div class="card border-0 shadow-sm">
+                    <img src="{{ with .Params.mainImage }}{{ . | relURL }}{{ end }}" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title mb-0"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h5>
+                        <div class="card-text text-black-50 mt-2">{{ .Summary }}</div>
+                    </div>
+                </div>
+                </a>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+{{ end }}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+    {{- partial "head.html" . -}}
+    <body id="page-top" class="landing-body">
+                <!-- Google Tag Manager (noscript) -->
+                <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N6VWJ4B"
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+                    <!-- End Google Tag Manager (noscript) -->
+                
+        <main class="landing-body-content" role="main" id="page-content">
+        {{ .Content }}
+        </main>
+        {{- partial "landing-footer.html" . -}}
+    </body>
+    {{- partial "landing-scripts.html" . -}}
+</html>

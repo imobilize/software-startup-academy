@@ -1,0 +1,52 @@
+{{ define "main" }}
+
+<section class="hero-area">
+    <div class="container text-center">
+        <h1 class="text-white">{{ .Title }}</h1>
+    </div>
+</section>
+
+ <!--================Blog Area =================-->
+ <section class="blog_area single-post-area area-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 posts-list">
+                <div class="single-post">
+                    <div class="feature-img">
+                        <img class="img-fluid" src="{{ with .Params.mainImage }}{{ . | relURL }}{{ end }}" alt="{{.Title}} image" />
+                    </div>
+
+                    <div class="blog_details">
+                        <ul class="blog-info-link mt-3 mb-4 list-unstyled">
+                            {{ range $taxonomyname := .Params.categories }}
+                            <li><a href="{{ "/" | relLangURL}}{{ $taxonomyname | urlize }}">#{{ $taxonomyname }}</a></li>
+                            {{ end }}
+                        </ul>
+                  
+                        {{ .Content }}
+
+                    </div>
+                    <div>
+                        {{ partial "share-buttons.html" . }}
+                    </div>
+                    <div>
+                        {{- partial "fbcomments.html" . -}}
+
+                    </div>
+        
+                </div>
+            </div>
+
+            {{- partial "side-widgets.html" . -}}
+
+        </div>
+    </div>
+ </section>
+
+{{ end }}
+
+{{ define "scripts"}}
+
+
+
+{{ end }}

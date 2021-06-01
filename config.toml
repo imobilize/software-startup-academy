@@ -1,0 +1,43 @@
+baseURL = "https://www.andrebarrett.com"
+relativeURLs = true
+languageCode = "en-us"
+title = "Entrepreneur, Investor and Business Coach"
+
+
+theme = "agency-theme"
+summaryLength = 10
+
+# Build robots.txt file
+enableRobotsTXT = true
+# google analytics tracking id
+googleAnalytics = ""
+
+enableGitInfo = false
+pygmentsCodeFences = true
+
+# Multilangues setup
+# Renders the default content language in subdir, e.g. /en/. The root directory / will redirect to /en/
+defaultContentLanguageInSubdir = false
+defaultContentLanguage = "en"
+
+[taxonomies]
+  category = "categories"
+  contributor = "contributors"
+  tag = "tags"
+
+[permalinks]
+    blog = "/:title"
+    categories = "/:title"
+    landingpages = "/:title"
+    mainpages = "/:title"
+
+
+[params]
+    contentDir = "content"
+    weight = 10
+    languageCode = "en-us"
+    title = "Software startup coaching for tech entrepreneurs - Andre Barrett"
+    dateFormat = "January 2, 2006"
+
+    logo = "img/logos/AndreBarrett-Logo.png"
+    menufixed = false

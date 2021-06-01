@@ -1,0 +1,52 @@
+{{ define "main" }}
+
+<section class="hero-area">
+  <div class="container text-center">
+    <h1 class="text-white">{{ .Title }}</h1>
+  </div>
+</section>
+  
+   <!-- Page Content -->
+   <div class="container">
+  
+          <div class="row mt-5">
+      
+            {{ "<!-- Blog Entries Column -->" | safeHTML }}
+            <div class="col-md-8">
+      
+            {{ "<!-- Blog Post -->" | safeHTML }}
+              {{ range (.Paginator 8).Pages }}
+
+              <div class="card mb-4 post">
+                <img class="card-img-top" src="{{ with .Params.mainImage }}{{ . | relURL }}{{ end }}" alt="{{.Title}} image" />
+                <div class="card-body">
+                  <h2 class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+                  <p class="card-text">  {{ .Summary }} </p>
+                  <a href="{{ .RelPermalink }}" class="btn btn-primary">Read More &rarr;</a>
+                </div>
+                <div class="card-footer text-muted">
+                  Posted on {{ .Date.Format .Site.Params.dateFormat }} by
+                  {{ $thumbnail := .Params.authorThumbnail | relURL }}
+                  {{ with .Params.contributors }}
+                  {{ range . }}
+                  <b>{{ . }}</b> 
+                   
+                  {{ end }}
+                  {{ end }}
+                </div>
+              </div>
+              {{ "<!-- /single blog post -->" | safeHTML }}
+              {{ end }}
+      
+              {{ "<!-- Pagination -->" | safeHTML }}
+              {{ template "_internal/pagination.html" . }}
+
+            </div>
+      
+            {{- partial "side-widgets.html" . -}}
+      
+          </div>
+      
+        </div>
+
+{{ end }}

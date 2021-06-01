@@ -1,0 +1,13 @@
+.welcome-header {
+    color: #333;
+    font-size: 2.25rem;
+    font-family: inherit;
+    font-weight: 600;
+}
+
+.sticky-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-left: 0px !important;
+}
