@@ -1306,6 +1306,21 @@ ul.social-buttons li a:hover {
 	overflow: hidden;
 }
 
+.home-hero-area::before {
+	content: "";
+	top: 0;
+	left: 0;
+    opacity: 0.85;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	position: absolute;
+	background: #000529; /* Old browsers */
+	background: -moz-linear-gradient(left, #0074d9 1%, #005db5 24%, #002055 67%, #000529 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left, #0074d9 1%, #005db5 24%, #002055 67%, #000529 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right, #0074d9 1%, #005db5 24%, #002055 67%, #000529 100%);
+}
+
 .hero-area::before {
 	content: "";
 	top: 0;
