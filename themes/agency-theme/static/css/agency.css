@@ -164,6 +164,10 @@ h2 > a {
 	}
 }
 
+.bg-light {
+	background-color: #f8f9fa!important;
+}
+
 ::-moz-selection {
 	background: #fed136;
 	text-shadow: none;
