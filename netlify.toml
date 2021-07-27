@@ -30,7 +30,7 @@ HUGO_VERSION = "0.83.1"
 HUGO_ENABLEGITINFO = "true"
 
 [[redirects]]
-  from = "http://app.softwarestartupacademy.com/*"
-  to = "https://app.softwarestartupacademy.com/:splat"
-  status = 301
-  force = true
+from = "http://app.softwarestartupacademy.com/*"
+to = "https://app.softwarestartupacademy.com/:splat"
+status = 301
+force = true
