@@ -34,3 +34,9 @@ from = "http://app.softwarestartupacademy.com/*"
 to = "https://app.softwarestartupacademy.com/:splat"
 status = 301
 force = true
+
+[[redirects]]
+from = "http://app.softwarestartupacademy.com"
+to = "https://app.softwarestartupacademy.com"
+status = 301
+force = true
