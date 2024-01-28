@@ -9,8 +9,8 @@ HUGO_ENABLEGITINFO = "true"
 
 
 [[redirects]]
-from = "http://app.softwarestartupacademy.com/*"
-to = "https://app.softwarestartupacademy.com/:splat"
+from = "https://app.softwarestartupacademy.com/*"
+to = "https://members.topbusinesscoaching.com/:splat"
 status = 301
 force = true
 
@@ -19,3 +19,4 @@ from = "http://app.softwarestartupacademy.com"
 to = "https://app.softwarestartupacademy.com"
 status = 301
 force = true
+
